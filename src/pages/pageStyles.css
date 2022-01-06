@@ -1,0 +1,67 @@
+
+body{
+    background-color: rgb(234, 236, 241);
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+.header1{
+  font-size: 60px;
+  text-emphasis: bold;
+}
+.pagetitle{
+  font-size: 70px;
+}
+  #wrapper {
+    height: 100%;
+    width: 100%;
+    
+    /* flex-direction: row; */
+    background: #c9d1e2;
+  }
+  
+  #top {
+    flex: 1;
+    display: flex;
+  }
+  
+  #middle {
+    flex: 1;
+    display: flex;
+  }
+
+  #columnChart {
+    width: 30%;
+    height: 40%;
+    flex: 1;
+   
+  }
+  
+  #highChart {
+    width: 30%;
+    height: 25%;
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+  }
+  
+  #pieChart {
+    width: 40%;
+  }
+  #midChart1 {
+    width: 40%;
+  }
+  #midChart2 {
+    width: 50%;
+  }
+  
+  #myGrid {
+    flex: 2;
+    z-index: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    height:100%;
+    /* display: grid; */
+  }

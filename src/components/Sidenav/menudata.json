@@ -1,0 +1,51 @@
+{"menuData": [
+               
+    {"name": "Executive Summary","url": "/page/ExecutiveSummary"},
+    
+    {"name": "Generators",
+      "children": [
+        {"name": "Gen Daily Summary","url": "/page/GenSummary"},
+        {"name": "DART PL","url": "/page/DartPL"},
+        {"name": "DA Test1","url": "/page/DaTest1"},
+        {"name": "DA PL","url": "/page/DaPL"},
+        {"name": "DA RSG","url": "/page/DaRsg"}
+      ]
+    },
+    
+    {"name": "Load",
+      "children": [
+        {"name": "Load Main","url": "/page/Load1"},
+        {"name": "Menu 3.2","url": "/page/menu-3-2"},
+        {"name": "Menu 3.3",
+          "children": [
+            {"name": "Menu 3.3.1","url": "/page/menu-3-3-1"}
+          ]
+        }
+      ]
+    },
+    {"name": "FTR",
+      "children": [
+        {"name": "Menu 4.1","url": "/page/menu-4-1"},
+        {"name": "Menu 4.2","url": "/page/menu-4-2"},
+        {"name": "Menu 4.3",
+          "children": [
+            {"name": "Menu 4.3.1","url": "/page/menu-4-3-1"},
+            {"name": "Menu 4.3.2","url": "/page/menu-4-3-2"},
+            {"name": "Menu 4.3.3",
+              "children": [
+                {"name": "Menu 4.3.3.1",
+                  "children": [
+                    {"name": "Menu 4.3.3.1.1","url": "/page/menu-4-3-3-1-1"}
+                  ]
+                },
+                {"name": "Menu 4.3.3.2","url": "/page/menu-4-3-3-2"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ] 
+      
+}
+
