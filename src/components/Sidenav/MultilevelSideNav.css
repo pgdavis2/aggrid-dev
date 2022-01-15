@@ -13,7 +13,7 @@
 }
 
 .multilevelSideNav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 8px;
   text-decoration: none;
   font-size: 25px;
   color: #ffffff;
@@ -32,12 +32,12 @@ multilevelSideNav a:active {
 .multilevelSideNav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  right: 1px;
+  font-size: 32px;
+  margin-left: 0px;
 }
 
 @media screen and (max-height: 450px) {
-  .multilevelSideNav {padding-top: 15px;}
-  .multilevelSideNav a {font-size: 18px;}
+  .multilevelSideNav {padding-top: 5px;}
+  .multilevelSideNav a {font-size: 8px;}
 }

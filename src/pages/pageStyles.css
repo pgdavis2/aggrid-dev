@@ -1,13 +1,18 @@
 
-body{
+.body{
     background-color: rgb(234, 236, 241);
     font-family: 'Open Sans', sans-serif;
-    
+    color: rgb(18, 10, 80);
+}
+.header2{
+  font-size: 30px;
+  text-emphasis: filled double-circle blue;
+  text-emphasis-color: red;
 }
 
 .header1{
-  font-size: 60px;
-  text-emphasis: bold;
+  font-size: 40px;
+  text-emphasis: normal;
 }
 .pagetitle{
   font-size: 70px;
@@ -65,3 +70,11 @@ body{
     height:100%;
     /* display: grid; */
   }
+
+#gen-nav{
+    color:rgb(18, 10, 80) !important;
+    padding-top:'8px';
+    /* font-weight: bold; */
+    /* text-emphasis: filled double-circle blue; 
+    background-color: rgb(244, 245, 247);*/
+}

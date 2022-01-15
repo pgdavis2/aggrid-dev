@@ -10,7 +10,8 @@ import AggridChart1 from '../components/charts/AggridChart1';
 import AggridChart2 from '../components/charts/AggridChart2';
 import Kpi1 from '../components/charts/Kpi/Kpi1';
 import UnitSelector from '../components/Selectors/UnitSelector';
-import TableDatePicker2 from '../components/Selectors/TableDatePicker2';
+import ReactDatePicker from '../components/Selectors/ReactDatePicker';
+import TopGenpages from '../TopGenpages';
 
 //This adds integrated charts
 export default function DartPL() {
@@ -112,13 +113,14 @@ const setSideBarVisible = (value) => {
 //This is where the fun begins
   return (
     
-    <div id="wrapper" style={{width: '95%',height: 800,minHeight:"75%"}}>
+    <div id="wrapper" style={{width: '95%',height: 800}}>
       <div style={{display:'flex'}}>
         
         <span style={{display:'flex',fontSize:"30px",fontWeight:'bold',paddingLeft:"90px",float:'left'}}>DART P&L for Generator:</span>
-        <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",width:'300px'}} ><UnitSelector /></div><span style={{fontSize:"20px",fontWeight:'normal',paddingTop:"6px",paddingLeft:"90px",float:'left'}}> Select Analysis Date Range: </span> 
-        <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",width:'300px'}} ><TableDatePicker2 /></div> 
-        
+        <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",width:'300px'}} ><UnitSelector /></div>
+            <span style={{fontSize:"20px",fontWeight:'normal',paddingTop:"6px",paddingLeft:"90px",float:'left'}}> Select Analysis Date Range: </span> 
+        <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",paddingTop:"3px",width:'300px'}} ><ReactDatePicker /></div> 
+        <TopGenpages />
         
       </div>
       <div style={{display:'flex'}} id="top">
@@ -205,22 +207,7 @@ const setSideBarVisible = (value) => {
       </AgGridReact>
       <div>
         <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
-        <h1>This is the end</h1>
+   
 
       </div>
         </div>

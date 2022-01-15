@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-
+import addDays from 'date-fns/addDays'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { toDate } from "date-fns";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-export function DatePickerRange2() {
+export default function DatePickerRange() {
  const [startDate, setStartDate] = useState(null);
  const [endDate, setEndDate] = useState(null);
  const onChange = (dates) => {
@@ -12,9 +14,12 @@ export function DatePickerRange2() {
     setStartDate(start);
     setEndDate(end);
   };
+  // first month January is 0 not 1 !!
+const firstDate=toDate(new Date(2018, 2, 1))
 
  return (
-   <div >
+ 
+   <div>
      <DatePicker
        isClearable
        selected={startDate}
@@ -27,18 +32,12 @@ export function DatePickerRange2() {
        dropdownMode="select"
        monthsShown={2}
        fixedHeight
-       
+       maxDate={addDays(firstDate,-1)}
       placeholderText="Select a prior date range"
     //    inline
      />
+     
    </div>
- );
-}
-
-export default function TableDatePicker2() {
- return (
-   <div style={{ display: "flex",width:"200px",marginTop:"5px",marginBottom:"5px",fontSize:"18px"}}>
-     <DatePickerRange2 />
-   </div>
+  
  );
 }

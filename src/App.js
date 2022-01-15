@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import DartPL from './pages/DartPL';
 import DaPL from './pages/DaPL';
@@ -7,13 +7,11 @@ import Home from './pages/Home';
 import Load1 from './pages/Load1';
 import MultilevelSideNav from './components/Sidenav/MultilevelSideNav';
 import {menuData} from './components/Sidenav/menudata.json';
-import TableDatePicker from './components/Selectors/TableDatePicker'
-import TableDatePicker2 from './components/Selectors/TableDatePicker2'
-import TableDatePicker3 from './components/Selectors/TableDatePicker3'
 import DaRsg from './pages/DaRsg'
 import DaTest1 from './pages/DaTest1'
 import GenSummary from './pages/GenSummary'
-import Modal from "./components/Modal/Modal";
+import PortfolioSummary from './pages/PortfolioSummary'
+
 
 
 const App = () => {
@@ -26,7 +24,7 @@ const App = () => {
       {/* <Router > */}
       <Router BrowserRouter basename={process.env.PUBLIC_URL}>
         <MultilevelSideNav sideNavState={sideNavState} sideNavHandler={setSideNavState} data={menuData} />
-        <div style={{marginLeft:(sideNavState)?'250px':'0'}}>
+        <div style={{marginLeft:(sideNavState)?'160px':'0'}}>
         <div>
           <span style={{fontSize:'30px',cursor:'pointer',float:'left',display:'inline-block', paddingRight: '1px'}} onClick={e=>setSideNavState(true)}>&#9776;
             </span>  
@@ -36,36 +34,40 @@ const App = () => {
                         <TableDatePicker3 />
                         </Modal> */}
           </div>  
-          <Switch> 
-          <Route path="/page/GenSummary">
+          <Routes> 
+          <Route exact path="/page/PortfolioSummary" element={<PortfolioSummary />}>
+             <PortfolioSummary />
+          </Route>
+
+          <Route path="/page/GenSummary" element={<GenSummary />}>
              <GenSummary />
           </Route>
           
-          <Route path="/page/Load1">
+          <Route exact path="/page/Load1" element={<Load1 />}>
              <Load1 />
           </Route>
 
-          <Route path="/page/DartPL">
+          <Route exact path="/page/DartPL" element={<DartPL />}>
              <DartPL />
           </Route>
           
-          <Route path="/page/DaTest1">
+          <Route exact path="/page/DaTest1" element={<DaTest1 />}>
              <DaTest1 />
           </Route>
 
-          <Route path="/page/DaPL">
+          <Route exact path="/page/DaPL" element={<DaPL />}>
              <DaPL />
           </Route>
 
-          <Route path="/page/DaRsg">
+          <Route exact path="/page/DaRsg" element={<DaRsg />}>
              <DaRsg />
           </Route>
 
-          <Route path="/">
+          <Route exact path="/" element={<Home />}>
              <Home />
           </Route>
           
-        </Switch>
+        </Routes>
         </div>        
       </Router>
     </div>

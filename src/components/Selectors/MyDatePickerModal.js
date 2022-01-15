@@ -7,7 +7,7 @@ import { addDays } from 'date-fns';
 
 // From https://hypeserver.github.io/react-date-range/
 
-export function DatePickerRange3() {
+export function DatePickerModal() {
     const [state, setState] = useState({
         selection: {
           startDate: new Date(),
@@ -33,10 +33,10 @@ export function DatePickerRange3() {
  );
 }
 
-export default function TableDatePicker3() {
+export default function MyDatePickerModal() {
  return (
    <div>
-     <DatePickerRange3 />
+     <DatePickerModal />
    </div>
  );
 }
