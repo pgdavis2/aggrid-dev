@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './pages/pageStyles.css'
+import '../pages/pageStyles.css'
 
 import { Nav,Navbar,Container,NavDropdown } from 'react-bootstrap';
 

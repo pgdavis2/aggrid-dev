@@ -103,14 +103,14 @@ const setSideBarVisible = (value) => {
 // console.log(myGuy)
 // https://pretagteam.com/question/how-can-i-filter-a-json-object-in-javascript
 // I don't know how to pass the react-select parameter yet so this is hard coded
-var result = DART_PL.filter(obj => obj.ReportingID === "RMS 16A");
+// var result = DART_PL.filter(obj => obj.ReportingID === "RMS 16A");
 
 
 //This is where the fun begins
   return (
     
     <div id="wrapper" style={{width: '95%',height: 800,minHeight:"75%"}}>
-      {/* <div style={{display:'flex'}}>
+      <div style={{display:'flex'}}>
         
         <span style={{display:'flex',fontSize:"30px",fontWeight:'bold',paddingLeft:"90px",float:'left'}}>DA P&L for Generator:</span>
         <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",width:'300px'}} ><UnitSelector /></div>
@@ -118,7 +118,7 @@ var result = DART_PL.filter(obj => obj.ReportingID === "RMS 16A");
         <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",paddingTop:"3px",width:'300px'}} ><ReactDatePicker /></div> 
         <TopGenpages />
         
-      </div> */}
+      </div>
       <div style={{display:'flex'}} id="top">
             
             <div id="barChart" ></div>

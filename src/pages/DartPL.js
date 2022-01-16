@@ -11,7 +11,7 @@ import AggridChart2 from '../components/charts/AggridChart2';
 import Kpi1 from '../components/charts/Kpi/Kpi1';
 import UnitSelector from '../components/Selectors/UnitSelector';
 import ReactDatePicker from '../components/Selectors/ReactDatePicker';
-import TopGenpages from '../TopGenpages';
+import TopGenpages from '../components/TopGenpages';
 
 //This adds integrated charts
 export default function DartPL() {
@@ -75,6 +75,7 @@ export default function DartPL() {
       }
     },
     browserDatePicker: true,
+    inRangeInclusive:true,
     minValidYear: 2000,
     maxValidYear: 2021,
   };  
@@ -114,15 +115,7 @@ const setSideBarVisible = (value) => {
   return (
     
     <div id="wrapper" style={{width: '95%',height: 800}}>
-      <div style={{display:'flex'}}>
-        
-        <span style={{display:'flex',fontSize:"30px",fontWeight:'bold',paddingLeft:"90px",float:'left'}}>DART P&L for Generator:</span>
-        <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",width:'300px'}} ><UnitSelector /></div>
-            <span style={{fontSize:"20px",fontWeight:'normal',paddingTop:"6px",paddingLeft:"90px",float:'left'}}> Select Analysis Date Range: </span> 
-        <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",paddingTop:"3px",width:'300px'}} ><ReactDatePicker /></div> 
-        <TopGenpages />
-        
-      </div>
+    
       <div style={{display:'flex'}} id="top">
             <div  id="pieChart"></div>
             <div id="barChart" ></div>

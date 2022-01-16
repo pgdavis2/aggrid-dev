@@ -6,7 +6,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(3, 38, 78);
+  background-image: linear-gradient(to top left, rgba(32, 32, 32, 0), rgb(10, 10, 10));
   overflow-x: hidden;
   padding-top: 60px;
   
@@ -26,7 +26,7 @@ multilevelSideNav a:active {
 }
 
 .multilevelSideNav a:hover {
-  color: #7b849e;
+  color: black;
 }
 
 .multilevelSideNav .closebtn {

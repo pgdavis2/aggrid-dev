@@ -1,6 +1,6 @@
 
 .body{
-    background-color: rgb(234, 236, 241);
+    background-color: rgb(255, 255, 255);
     font-family: 'Open Sans', sans-serif;
     color: rgb(18, 10, 80);
 }
@@ -22,7 +22,7 @@
     width: 100%;
     
     /* flex-direction: row; */
-    background: #c9d1e2;
+    background: #eeeeee;
   }
   
   #top {

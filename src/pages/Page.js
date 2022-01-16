@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import Gen2 from './pages/DaPL';
+import Gen2 from './DaPL';
 const Page = () => {
     const { slug } = useParams();
     return (
