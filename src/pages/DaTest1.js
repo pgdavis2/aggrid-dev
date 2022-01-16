@@ -11,6 +11,7 @@ import AggridChart3MultiLine from '../components/charts/AggridChart3MultiLine';
 import Kpi1 from '../components/charts/Kpi/Kpi1';
 import UnitSelector from '../components/Selectors/UnitSelector';
 import ReactDatePicker from '../components/Selectors/ReactDatePicker';
+import TopGenpages from '../TopGenpages';
 
 //This adds integrated charts
 export default function DaTest1() {
@@ -113,7 +114,7 @@ var result = DART_PL.filter(obj => obj.ReportingID === "RMS 16A");
         <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",width:'300px'}} ><UnitSelector /></div>
             <span style={{fontSize:"20px",fontWeight:'normal',paddingTop:"6px",paddingLeft:"90px",float:'left'}}> Select Analysis Date Range: </span> 
         <div style={{fontSize:"18px",fontWeight:'normal',paddingLeft:"20px",paddingTop:"3px",width:'300px'}} ><ReactDatePicker /></div> 
-        
+        <TopGenpages />
         
       </div>
       <div style={{display:'flex'}} id="top">

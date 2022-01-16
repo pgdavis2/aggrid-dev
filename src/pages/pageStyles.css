@@ -72,8 +72,9 @@
   }
 
 #gen-nav{
-    color:rgb(18, 10, 80) !important;
+    color:rgb(17, 3, 122) !important;
     padding-top:'8px';
+    font-weight:"bold" !important;
     /* font-weight: bold; */
     /* text-emphasis: filled double-circle blue; 
     background-color: rgb(244, 245, 247);*/

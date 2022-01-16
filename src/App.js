@@ -33,41 +33,26 @@ const App = () => {
                         <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
                         <TableDatePicker3 />
                         </Modal> */}
-          </div>  
-          <Routes> 
-          <Route exact path="/page/PortfolioSummary" element={<PortfolioSummary />}>
-             <PortfolioSummary />
-          </Route>
+         </div> 
 
-          <Route path="/page/GenSummary" element={<GenSummary />}>
-             <GenSummary />
-          </Route>
-          
-          <Route exact path="/page/Load1" element={<Load1 />}>
-             <Load1 />
-          </Route>
+         <Routes> 
+            <Route exact path="/" element={<Home />}></Route>
 
-          <Route exact path="/page/DartPL" element={<DartPL />}>
-             <DartPL />
-          </Route>
-          
-          <Route exact path="/page/DaTest1" element={<DaTest1 />}>
-             <DaTest1 />
-          </Route>
+            <Route exact path="/page/PortfolioSummary" element={<PortfolioSummary />}></Route>
 
-          <Route exact path="/page/DaPL" element={<DaPL />}>
-             <DaPL />
-          </Route>
+            <Route path="/page/GenSummary" element={<GenSummary />}></Route>
+            
+            <Route exact path="/page/Load1" element={<Load1 />}></Route>
 
-          <Route exact path="/page/DaRsg" element={<DaRsg />}>
-             <DaRsg />
-          </Route>
+            <Route exact path="/page/DartPL" element={<DartPL />}></Route>
+            
+            <Route exact path="/page/DaTest1" element={<DaTest1 />}></Route>
 
-          <Route exact path="/" element={<Home />}>
-             <Home />
-          </Route>
-          
-        </Routes>
+            <Route exact path="/page/DaPL" element={<DaPL />}></Route>
+
+            <Route exact path="/page/DaRsg" element={<DaRsg />}></Route>
+
+         </Routes>
         </div>        
       </Router>
     </div>

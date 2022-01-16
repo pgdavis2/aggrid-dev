@@ -10,25 +10,23 @@ export default function TopGenpages(){
     <div>
         
         
-            <Nav   > <span style={{fontWeight: "bold",paddingTop:'8px'}}> Generator Pages:</span>
-                <Nav.Link id='gen-nav' href="/page/DartPL">DA-RT</Nav.Link>
-                <Nav.Link id='gen-nav' href="DaTest1">Day-Ahead</Nav.Link>
-                
-                <NavDropdown id='gen-nav' title="Real-Time" >
-                    <NavDropdown.Item href="/page/DaTest1" >DATest</NavDropdown.Item>
-                    <NavDropdown.Item  href="/page/DartPL">DART P&L</NavDropdown.Item>
-                </NavDropdown>
-               
-                <NavDropdown id='gen-nav' title="GFA" >
-                    <NavDropdown.Item href="/page/DaTest1" >GFA P&L</NavDropdown.Item>
-                    <NavDropdown.Item  href="/page/DartPL">GFA Rebates</NavDropdown.Item>
-                </NavDropdown>
+        <Nav> <span style={{fontWeight: 600, fontSize:"20px",paddingTop:'4px'}}> Generator Pages:</span>
+            <Nav.Link style={{fontWeight: 600}} id='gen-nav' href="DartPL">DA-RT</Nav.Link>
+            <Nav.Link style={{fontWeight: 600}} id='gen-nav' href="DaTest1">Day-Ahead</Nav.Link>
+            
+            <NavDropdown style={{fontWeight: 600}}id='gen-nav' title="Real-Time" >
+                <NavDropdown.Item href="DaTest1" >DATest</NavDropdown.Item>
+                <NavDropdown.Item  href="DartPL">DART P&L</NavDropdown.Item>
+            </NavDropdown>
+            
+            <NavDropdown style={{fontWeight: 600}} id='gen-nav' title="GFA" >
+                <NavDropdown.Item href="DaTest1" >GFA P&L</NavDropdown.Item>
+                <NavDropdown.Item  href="DartPL">GFA Rebates</NavDropdown.Item>
+            </NavDropdown>
 
-            </Nav>
+        </Nav>
     
        
-        <br />
-
 {/* Plain links */}
 {/* <Nav >
   <Nav.Item as="li">

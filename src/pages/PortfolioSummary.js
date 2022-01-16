@@ -1,6 +1,6 @@
 import './pageStyles.css'
 import TopGenpages from '../TopGenpages';
-
+import BasicTabs from '../tabs';
 
 export default function PortfolioSummary(){
     return (
@@ -12,7 +12,8 @@ export default function PortfolioSummary(){
          </span>
         <div className='wrapper'>
             <div className='header1'>
-              
+              <BasicTabs />
+
                     </div>
         </div>
         </div>
