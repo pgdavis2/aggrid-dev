@@ -3,7 +3,6 @@ import addDays from 'date-fns/addDays'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toDate } from "date-fns";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function DatePickerRange() {
@@ -33,8 +32,8 @@ const firstDate=toDate(new Date(2018, 2, 1))
        monthsShown={2}
        fixedHeight
        maxDate={addDays(firstDate,-1)}
-      placeholderText="Select a prior date range"
-    //    inline
+       placeholderText="Select Start and End Date"
+      //inline
      />
      
    </div>

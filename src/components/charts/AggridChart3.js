@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { AgChartsReact } from "ag-charts-react";
 import { DART_PL } from '../../data/DART_PL_dy.json'
 
-class AggridChart3MultiLine extends Component {
+class AggridChart3 extends Component {
   constructor(props) {
     super(props);
 
@@ -70,4 +70,4 @@ class AggridChart3MultiLine extends Component {
   }
 }
 
-export default AggridChart3MultiLine;
+export default AggridChart3;

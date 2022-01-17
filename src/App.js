@@ -11,7 +11,10 @@ import DaRsg from './pages/DaRsg'
 import DaTest1 from './pages/DaTest1'
 import GenSummary from './pages/GenSummary'
 import PortfolioSummary from './pages/PortfolioSummary'
-
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
 
 const App = () => {
@@ -25,15 +28,11 @@ const App = () => {
       <Router BrowserRouter basename={process.env.PUBLIC_URL}>
         <MultilevelSideNav sideNavState={sideNavState} sideNavHandler={setSideNavState} data={menuData} />
         <div style={{marginLeft:(sideNavState)?'160px':'0'}}>
-        <div>
-          <span style={{fontSize:'30px',cursor:'pointer',float:'left',display:'inline-block', paddingRight: '1px'}} onClick={e=>setSideNavState(true)}>&#9776;
-            </span>  
-          
-                      {/* <button onClick={() => setShow(true)}>Show Modal</button>
-                        <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
-                        <TableDatePicker3 />
-                        </Modal> */}
-         </div> 
+      
+        <span style={{fontSize:'25px',cursor:'pointer',float:'left',paddingRight:'10px'}} 
+          onClick={e=>setSideNavState(true)}>&#9776;
+        </span>      
+        
 
          <Routes> 
             <Route exact path="/" element={<Home />}></Route>
@@ -53,6 +52,7 @@ const App = () => {
             <Route exact path="/page/DaRsg" element={<DaRsg />}></Route>
 
          </Routes>
+       
         </div>        
       </Router>
     </div>

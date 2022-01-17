@@ -35,47 +35,6 @@
     display: flex;
   }
 
-  #columnChart {
-    width: 30%;
-    height: 40%;
-    flex: 1;
-   
-  }
-  
-  #highChart {
-    width: 30%;
-    height: 25%;
-    flex: 1;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-  }
-  
-  #pieChart {
-    width: 40%;
-  }
-  #midChart1 {
-    width: 40%;
-  }
-  #midChart2 {
-    width: 50%;
-  }
-  
-  #myGrid {
-    flex: 2;
-    z-index: 1;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-    height:100%;
-    /* display: grid; */
-  }
 
-#gen-nav{
-    color:rgb(17, 3, 122) !important;
-    padding-top:'8px';
-    font-weight:"bold" !important;
-    /* font-weight: bold; */
-    /* text-emphasis: filled double-circle blue; 
-    background-color: rgb(244, 245, 247);*/
-}
+
+

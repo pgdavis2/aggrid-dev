@@ -114,7 +114,7 @@ const setSideBarVisible = (value) => {
 //This is where the fun begins
   return (
     
-    <div id="wrapper" style={{width: '95%',height: 800}}>
+    <div id="wrapper" style={{width: '100%',height: 800}}>
     
       <div style={{display:'flex'}} id="top">
             <div  id="pieChart"></div>
