@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import DartPL from './pages/DartPL';
-import DaPL from './pages/DaPL';
+
 import Home from './pages/Home';
 import Load1 from './pages/Load1';
 import MultilevelSideNav from './components/Sidenav/MultilevelSideNav';
 import {menuData} from './components/Sidenav/menudata.json';
 import DaRsg from './pages/DaRsg'
-import DaTest1 from './pages/DaTest1'
 import GenSummary from './pages/GenSummary'
 import PortfolioSummary from './pages/PortfolioSummary'
 import Grid from '@mui/material/Grid';
@@ -43,12 +41,9 @@ const App = () => {
             
             <Route exact path="/page/Load1" element={<Load1 />}></Route>
 
-            <Route exact path="/page/DartPL" element={<DartPL />}></Route>
+            <Route exact path="/page/DartPL" element={<GenSummary />}></Route>
             
-            <Route exact path="/page/DaTest1" element={<DaTest1 />}></Route>
-
-            <Route exact path="/page/DaPL" element={<DaPL />}></Route>
-
+          
             <Route exact path="/page/DaRsg" element={<DaRsg />}></Route>
 
          </Routes>

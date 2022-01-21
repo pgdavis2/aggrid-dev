@@ -5,8 +5,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 
 import Box from '@mui/material/Box';
-import DaGen from '../pages/DaGen';
-import DartGen from '../pages/DartGen';
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,18 +52,26 @@ export default function GenTabs() {
     <Box sx={{ width: '100%' }} >
       <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
         <Tabs value={value} onChange={handleChange} variant="fullWidth">
-          <Tab label="DART P&L" {...a11yProps(0)} />
-          <Tab label="DA P&L" {...a11yProps(1)} />
-
+          <Tab label="Executive Summary" {...a11yProps(0)} />
+          <Tab label="Portfolio P&L" {...a11yProps(1)} />
+          <Tab label="Price Analysis" {...a11yProps(2)} />
+          <Tab label="Net Load" {...a11yProps(3)} />
+        
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-      <DartGen />
+      
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <DaGen />
+       
       </TabPanel>
-
+      <TabPanel value={value} index={2}>
+     
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+      
+ 
+      </TabPanel>
     </Box>
   );
 }

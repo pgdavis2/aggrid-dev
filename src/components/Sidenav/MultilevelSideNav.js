@@ -28,7 +28,7 @@ const MultilevelSideNav = ({ data, sideNavState, sideNavHandler }) => {
     return data && (
         
         <div style={{ width: (sideNavState) ? '160px' : '0' }} className="multilevelSideNav">
-           <img src={require('./pciLogo2.png').default} alt='pci' className='side-menu'></img>
+           <img src={require('./pciLogo4.png').default} alt='pci' className='side-menu'></img>
             
             <Link to={"#"} className="closebtn" onClick={e => sideNavHandler(false)}>&times;</Link>
             {(previousStack.length) ?

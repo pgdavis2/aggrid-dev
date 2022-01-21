@@ -20,7 +20,7 @@ class AggridChart3 extends Component {
           series: [
             {
               type: 'column',
-              xKey: 'Month',
+              xKey: 'OpDate',
               yKeys: ['DA_Tot_En', 'RT_Meter'],
               yNames: ['DA Energy', 'RT Energy'],
               grouped: true,

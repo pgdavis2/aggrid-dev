@@ -10,43 +10,39 @@ class AggridChart2 extends Component {
         data: [
            
               {
-                quarter: "Q1'19",
-                iphone: 124,
-                mac: 18,
-                ipad: 16,
-                wearables: 18,
-                services: 26,
+                month: "Q1'18",
+                BGS7: 124,
+                BGS8: 18,
+                'BARTON WIND FARM': 16,
+              
               },
               {
-                quarter: "Q2'19",
-                iphone: 108,
-                mac: 20,
-                ipad: 16,
-                wearables: 18,
-                services: 40,
+                month: "Q2'18",
+                BGS7: 108,
+                BGS8: 20,
+                'BARTON WIND FARM': 16,
+               
               },
               {
-                quarter: "Q3'19",
-                iphone: 96,
-                mac: 22,
-                ipad: 18,
-                wearables: 24,
-                services: 42,
+                month: "Q3'18",
+                BGS7: 96,
+                BGS8: 22,
+                'BARTON WIND FARM': 18,
+               
               },
               {
-                quarter: "Q4'19",
-                iphone: 104,
-                mac: 22,
-                ipad: 14,
-                wearables: 20,
-                services: 40,
+                month: "Q4'18",
+                BGS7: 104,
+                BGS8: 22,
+                'BARTON WIND FARM': 14,
+                
               },
         ],
         series: [
             {
               type: 'column',
-              xKey: 'quarter',
-              yKeys: ['ipad'],
+              xKey: 'month',
+              yKeys: ['BARTON WIND FARM'],
             },
           ],
       }
