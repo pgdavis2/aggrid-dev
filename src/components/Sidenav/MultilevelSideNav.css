@@ -1,0 +1,44 @@
+
+.multilevelSideNav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  /* background-image: linear-gradient(to top left, rgba(32, 32, 32, 0), rgb(10, 10, 10)); */
+  overflow-x: hidden;
+  padding-top: 50px;
+  border-right: 1px solid rgba(108, 5, 5, 0.619);
+  border-bottom-right-radius: 20px;
+}
+
+.multilevelSideNav a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+multilevelSideNav a:active {
+  background-color: yellow;
+}
+
+.multilevelSideNav a:hover {
+  color: rgb(172, 170, 170);
+}
+
+.multilevelSideNav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  font-size: 32px;
+  margin-left: 0px;
+}
+
+@media screen and (max-height: 450px) {
+  .multilevelSideNav {padding-top: 5px;}
+  .multilevelSideNav a {font-size: 8px;}
+}

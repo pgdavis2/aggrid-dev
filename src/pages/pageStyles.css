@@ -1,0 +1,40 @@
+
+.body{
+    background-color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(18, 10, 80);
+}
+.header2{
+  font-size: 30px;
+  text-emphasis: filled double-circle blue;
+  text-emphasis-color: red;
+}
+
+.header1{
+  font-size: 40px;
+  text-emphasis: normal;
+}
+.pagetitle{
+  font-size: 70px;
+}
+  #wrapper {
+    height: 100%;
+    width: 100%;
+    
+    /* flex-direction: row; */
+    background: #eeeeee;
+  }
+  
+  #top {
+    flex: 1;
+    display: flex;
+  }
+  
+  #middle {
+    flex: 1;
+    display: flex;
+  }
+
+
+
+

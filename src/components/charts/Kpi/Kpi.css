@@ -1,0 +1,54 @@
+.kpi {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+   
+  }
+  
+  .kpiItem {
+    flex: 1;
+    margin: 0px 20px;
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    background-color: rgb(238, 244, 247);
+    color: rgba(94, 43, 43, 0.75);
+  }
+  
+  .kpiTitle{
+      font-size: 20px;
+  }
+  
+  .kpiMoneyContainer{
+      margin: 10px 0px;
+      display: flex;
+      align-items: center;
+  }
+  
+  .kpiMoney{
+      font-size: 30px;
+      font-weight: 600;
+  }
+  
+  .kpiMoneyRate{
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+  }
+  
+  .kpiIcon{
+      font-size: 14px;
+      margin-left: 5px;
+      color: green;
+  }
+  
+  .kpiIcon.negative{
+      color: red;
+  }
+  
+  .kpiSub{
+      font-size: 15px;
+      color: gray;
+  }
