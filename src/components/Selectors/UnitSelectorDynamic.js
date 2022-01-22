@@ -1,5 +1,5 @@
 import Select from 'react-select';
-import { UNITS } from '../../data/NAMES.json'
+import { UNITS } from '../../data/names.json'
 
 import React, { useState, useEffect,Component } from "react";
 

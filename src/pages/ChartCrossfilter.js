@@ -11,7 +11,7 @@ import 'ag-grid-enterprise';
 import { DATA } from '../data/data_hr.json'
 import { AgGridColumn, AgGridReact } from 'ag-grid-react'
 import './pageStyles.css'
-import Kpi2 from '../components/charts/Kpi/Kpi2';
+
  
   
 
@@ -20,6 +20,7 @@ export default function Chart_crossfilter() {
   
     const [gridApi, setGridApi] = useState(null);
      const [gridColumnApi, setGridColumnApi] = useState(null);
+     const [rowData, setRowData] = useState(null);
   
     const onGridReady = (params) => {
       setGridApi(params.api);
@@ -112,6 +113,7 @@ const onBtExport = () => {
 // var result = DATA.filter(obj => obj.Unit === "Lion Wind");
 var result=DATA;
 
+
 //This is where the fun begins
   return (
   <Box >
@@ -141,7 +143,7 @@ var result=DATA;
             onClick={() => onBtExport()}>
             Export to Excel
         </Button>
-           
+     
             <AgGridReact 
                 closeToolPanel = {true}
                 chartThemes={['ag-theme-balham']}
@@ -174,7 +176,7 @@ var result=DATA;
                 statusBar={{statusPanel:'agTotalAndFilteredRowCountComponent',align: 'left'}}          
                 suppressAggFuncInHeader
                 rowData={result}
-               
+              
 
                 >
                  <AgGridColumn field="Unit" valueFormatter={''}  filter={true}
