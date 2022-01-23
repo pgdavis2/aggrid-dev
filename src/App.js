@@ -4,9 +4,8 @@ import MultilevelSideNav from './components/Sidenav/MultilevelSideNav';
 import {menuData} from './components/Sidenav/menudata.json';
 import './App.css';
 import Home from './pages/Home';
-import Summary from './pages/Summary'
-
-
+import GenSummary from './pages/GenSummary'
+import WeatherAPI from './pages/WeatherAPI'
 
 const App = () => {
 
@@ -27,9 +26,9 @@ const App = () => {
          <Routes> 
             <Route exact path="/" element={<Home />}></Route>
 
-            <Route path="/page/Summary" element={<Summary />}></Route>
+            <Route path="/page/GenSummary" element={<GenSummary />}></Route>
             
-
+            <Route path="/page/WeatherAPI" element={<WeatherAPI />}></Route>
          </Routes>
        
         </div>        

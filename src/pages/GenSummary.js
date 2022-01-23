@@ -9,7 +9,7 @@ import * as React from 'react';
 
 
 
-export default function Summary(){
+export default function GenSummary(){
     return (
         <div>
          <Typography variant="h4" color='charcoal' fontWeight= '500'>

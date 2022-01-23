@@ -1,7 +1,7 @@
 {"menuData": [
   {"name": "Home","url": "/"},
-  {"name": "Generators","url": "/page/Summary"}
-
+  {"name": "Generators","url": "/page/GenSummary"},
+  {"name": "WeatherAPI","url": "/page/WeatherAPI"}
     
   ]
 }
