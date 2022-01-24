@@ -12,30 +12,30 @@ import { DATA } from '../data/data_hr.json'
 import { AgGridColumn, AgGridReact } from 'ag-grid-react'
 import './pageStyles.css'
 
- 
-  
+
+
 
 export default function Chart_crossfilter() {
 
-  
-    const [gridApi, setGridApi] = useState(null);
-     const [gridColumnApi, setGridColumnApi] = useState(null);
-     const [rowData, setRowData] = useState(null);
-  
-    const onGridReady = (params) => {
-      setGridApi(params.api);
-      setGridColumnApi(params.columnApi);
-    };
-  
-    const onFirstDataRendered = (params) => {
-      createLineChart(params.api);
-      createBarChart(params.api);
 
-    };
+  const [gridApi, setGridApi] = useState(null);
+  const [gridColumnApi, setGridColumnApi] = useState(null);
+  const [rowData, setRowData] = useState(null);
 
-var numberValueFormatter = function (params) {
+  const onGridReady = (params) => {
+    setGridApi(params.api);
+    setGridColumnApi(params.columnApi);
+  };
+
+  const onFirstDataRendered = (params) => {
+    createLineChart(params.api);
+    createBarChart(params.api);
+
+  };
+
+  var numberValueFormatter = function (params) {
     return parseFloat(params.value).toFixed(2);
-    };
+  };
   var dollarValueFormatter = function (params) {
     var formatted = parseFloat(params.value).toFixed(2);
     if (formatted.indexOf('-') === 0) {
@@ -43,7 +43,7 @@ var numberValueFormatter = function (params) {
     }
     return '$' + formatted;
   };
- 
+
   var filterParams = {
     comparator: function (filterLocalDateAtMidnight, cellValue) {
       var dateAsString = cellValue;
@@ -65,206 +65,202 @@ var numberValueFormatter = function (params) {
       }
     },
     browserDatePicker: true,
-    inRangeInclusive:true,
+    inRangeInclusive: true,
     minValidYear: 2018,
     maxValidYear: 2021,
-  };  
- 
+  };
+
   const sideBar = {
     toolPanels: [
       {
-          id: 'columns',
-          labelDefault: 'Columns',
-          labelKey: 'columns',
-          iconKey: 'columns',
-          toolPanel: 'agColumnsToolPanel',
-          minWidth: 100,
-          maxWidth: 225,
-          width: 150
+        id: 'columns',
+        labelDefault: 'Columns',
+        labelKey: 'columns',
+        iconKey: 'columns',
+        toolPanel: 'agColumnsToolPanel',
+        minWidth: 100,
+        maxWidth: 225,
+        width: 150
       },
       {
-          id: 'filters',
-          labelDefault: 'Filters',
-          labelKey: 'filters',
-          iconKey: 'filter',
-          toolPanel: 'agFiltersToolPanel',
-          minWidth: 100,
-          maxWidth: 400,
-          width: 150
+        id: 'filters',
+        labelDefault: 'Filters',
+        labelKey: 'filters',
+        iconKey: 'filter',
+        toolPanel: 'agFiltersToolPanel',
+        minWidth: 100,
+        maxWidth: 400,
+        width: 150
       }
-  ],
-  position: 'left',
-  defaultToolPanel: 'filters',
-  hiddenByDefault: true,
-};
-const setSideBarVisible = (value) => {
-  gridApi.setSideBarVisible(value);
-};
+    ],
+    position: 'left',
+    defaultToolPanel: 'filters',
+    hiddenByDefault: true,
+  };
+  const setSideBarVisible = (value) => {
+    gridApi.setSideBarVisible(value);
+  };
 
-const onBtExport = () => {
-  gridApi.exportDataAsExcel();
-};
-// // Attempt to filter on page
-// const myGuy=UnitSelector.opt
-// console.log(myGuy)
-// https://pretagteam.com/question/how-can-i-filter-a-json-object-in-javascript
-// I don't know how to pass the react-select parameter yet so this is hard coded
+  const onBtExport = () => {
+    gridApi.exportDataAsExcel();
+  };
 
-// var result = DATA.filter(obj => obj.Unit === "Lion Wind");
-var result=DATA;
+  // var result = DATA.filter(obj => obj.Unit === "Lion Wind");
+  var result = DATA;
 
 
-//This is where the fun begins
+  //This is where the fun begins
   return (
-  <Box >
+    <Box >
 
-    <Grid container spacing={1}>
-      
-      <Grid id='barChart' item xs={3}></Grid>
+      <Grid container spacing={1}>
 
-      <Grid id='lineChart' item xs={9}></Grid>
+        <Grid id='barChart' item xs={3}></Grid>
 
-    
-      <Grid className='ag-theme-balham' item xs={12} sx={{ height: '600px' }}>
-        <span style={{color:'black', fontSize:'16px'}}  >Sidebar:</span>
-        <ButtonGroup variant="text" size="small"  aria-label="text button group">
-                <Button 
-                    onClick={() => setSideBarVisible(true)}>
-                    Show
-                </Button>
-                    
-                <Button 
-                    onClick={() => setSideBarVisible(false)}>
-                    Hide
-                </Button>
-        </ButtonGroup> 
-        &nbsp;  &nbsp; &nbsp;   
-        <Button
+        <Grid id='lineChart' item xs={9}></Grid>
+
+
+        <Grid className='ag-theme-balham' item xs={12} sx={{ height: '600px' }}>
+          <span style={{ color: 'black', fontSize: '16px' }}  >Sidebar:</span>
+          <ButtonGroup variant="text" size="small" aria-label="text button group">
+            <Button
+              onClick={() => setSideBarVisible(true)}>
+              Show
+            </Button>
+
+            <Button
+              onClick={() => setSideBarVisible(false)}>
+              Hide
+            </Button>
+          </ButtonGroup>
+          &nbsp;  &nbsp; &nbsp;
+          <Button
             onClick={() => onBtExport()}>
             Export to Excel
-        </Button>
-     
-            <AgGridReact 
-                closeToolPanel = {true}
-                chartThemes={['ag-theme-balham']}
-                
-                sideBar={sideBar}
-                
-                onGridReady={onGridReady}
-                onFirstDataRendered={onFirstDataRendered}     
-                //groupDisplayType="groupRows"
-                reactUi={true}
-                enableCharts = {true}
-                enableRangeSelection = {true}
-                defaultColDef={{
-                enableRowGroup: true,
-                enablePivot: true,
-                enableValue: true,
-                sortable: true,
-                floatingFilter: true,
-                resizable: true,
-                sideBar:{sideBar},
-                flex: 1,
-                allowedAggFuncs:['sum', 'min', 'max','avg'],
-                aggFunc:'sum',
-                filter:'agNumberColumnFilter',
-                filterParams:'dollarFilterParams',
-                cellClass: 'ag-right-aligned-cell',
-                valueFormatter:dollarValueFormatter,
-                
-                }}
-                statusBar={{statusPanel:'agTotalAndFilteredRowCountComponent',align: 'left'}}          
-                suppressAggFuncInHeader
-                rowData={result}
-              
+          </Button>
 
-                >
-                 <AgGridColumn field="Unit" valueFormatter={''}  filter={true}
-                        cellStyle={{'text-align': 'center'}} cellClass={"ag-header-cell-label"}
-                        chartDataType="category"
-                ></AgGridColumn>
-                <AgGridColumn field="Date" valueFormatter={''} filterParams={filterParams} filter={"agDateColumnFilter"} minWidth={180}
-                        cellStyle={{'text-align': 'center'}}
-                        
-                ></AgGridColumn>
-                <AgGridColumn field="DateTime" filterParams={filterParams} filter={"agDateColumnFilter"} minWidth={180}
-                        valueFormatter={''} 
-                        cellStyle={{'text-align': 'center'}}>
-                </AgGridColumn>
-                <AgGridColumn field="Profit" cellClass= 'ag-right-aligned-cell'></AgGridColumn>
-                <AgGridColumn field="Price" aggFunc="avg"></AgGridColumn>
-                <AgGridColumn field="Energy" valueFormatter={'numberValueFormatter'}></AgGridColumn>
-                <AgGridColumn field="Revenue" ></AgGridColumn>
-                <AgGridColumn field="Cost" ></AgGridColumn>
-            </AgGridReact> 
+          <AgGridReact
+            closeToolPanel={true}
+            chartThemes={['ag-theme-balham']}
+
+            sideBar={sideBar}
+
+            onGridReady={onGridReady}
+            onFirstDataRendered={onFirstDataRendered}
+            //groupDisplayType="groupRows"
+            reactUi={true}
+            enableCharts={true}
+            enableRangeSelection={true}
+            defaultColDef={{
+              enableRowGroup: true,
+              enablePivot: true,
+              enableValue: true,
+              sortable: true,
+              floatingFilter: true,
+              resizable: true,
+              sideBar: { sideBar },
+              flex: 1,
+              allowedAggFuncs: ['sum', 'min', 'max', 'avg'],
+              aggFunc: 'sum',
+              filter: 'agNumberColumnFilter',
+              filterParams: 'dollarFilterParams',
+              cellClass: 'ag-right-aligned-cell',
+              valueFormatter: dollarValueFormatter,
+
+            }}
+            statusBar={{ statusPanel: 'agTotalAndFilteredRowCountComponent', align: 'left' }}
+            suppressAggFuncInHeader
+            rowData={result}
+
+
+          >
+            <AgGridColumn field="Unit" valueFormatter={''} filter={true}
+              cellStyle={{ 'text-align': 'center' }} cellClass={"ag-header-cell-label"}
+              chartDataType="category"
+            ></AgGridColumn>
+            <AgGridColumn field="Date" valueFormatter={''} filterParams={filterParams} filter={"agDateColumnFilter"} minWidth={180}
+              cellStyle={{ 'text-align': 'center' }}
+
+            ></AgGridColumn>
+            <AgGridColumn field="DateTime" filterParams={filterParams} filter={"agDateColumnFilter"} minWidth={180}
+              valueFormatter={''}
+              cellStyle={{ 'text-align': 'center' }}>
+            </AgGridColumn>
+            <AgGridColumn field="Profit" cellClass='ag-right-aligned-cell'></AgGridColumn>
+            <AgGridColumn field="Price" aggFunc="avg"></AgGridColumn>
+            <AgGridColumn field="Energy" valueFormatter={'numberValueFormatter'}></AgGridColumn>
+            <AgGridColumn field="Revenue" ></AgGridColumn>
+            <AgGridColumn field="Cost" ></AgGridColumn>
+          </AgGridReact>
+        </Grid>
+
       </Grid>
 
-    </Grid>
-
-  </Box>    
+    </Box>
   )
 }
 
 function createLineChart(gridApi) {
   gridApi.createCrossFilterChart(
-    
+
     {
-    chartType: 'line',
-    cellRange: {columns: ['DateTime', 'Energy']},
-    aggFunc: 'sum',
-   
-    chartThemeOverrides: {
-      
-      common: {
-        navigator: { 
-          enabled: true,
-          min:0,
-          max:.1,
-          height:15 },
-        title: {
-          enabled: true,
-          text: 'Energy (MWh)',
-        },
-        legend: { enabled: false },
-        
-        axes: {
-          category: { label: { rotation: -45 } },
-          number: {
-            label: { },
+      chartType: 'line',
+      cellRange: { columns: ['DateTime', 'Energy'] },
+      aggFunc: 'sum',
+
+      chartThemeOverrides: {
+
+        common: {
+          navigator: {
+            enabled: true,
+            min: 0,
+            max: .1,
+            height: 15
+          },
+          title: {
+            enabled: true,
+            text: 'Energy (MWh)',
+          },
+          legend: { enabled: false },
+
+          axes: {
+            category: { label: { rotation: -45 } },
+            number: {
+              label: {},
+            },
           },
         },
+
       },
-   
-    },
-    chartContainer: document.querySelector('#lineChart'),
-  });
+      chartContainer: document.querySelector('#lineChart'),
+    });
 }
 
 function createBarChart(gridApi) {
   gridApi.createCrossFilterChart(
-    
+
     {
-    chartType: 'column',
-    cellRange: {columns: ['Unit', 'Energy']},
-    aggFunc: 'sum',
-   
-    chartThemeOverrides: {
-      
-      common: {
-       
-        title: {
-          enabled: true,
-          text: 'Energy (MWh)',
+      chartType: 'column',
+      cellRange: { columns: ['Unit', 'Energy'] },
+      aggFunc: 'sum',
+
+      chartThemeOverrides: {
+
+        common: {
+
+          title: {
+            enabled: true,
+            text: 'Energy (MWh)',
+          },
+          legend: { enabled: false },
+
+          axes: {
+            category: { label: { rotation: -45 } },
+
+          },
         },
-        legend: { enabled: false },
-        
-        axes: {
-          category: { label: { rotation: -45 } },
-          
-        },
+
       },
-   
-    },
-    chartContainer: document.querySelector('#barChart'),
-  });
+      chartContainer: document.querySelector('#barChart'),
+    });
 }
