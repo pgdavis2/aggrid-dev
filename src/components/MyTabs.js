@@ -41,7 +41,7 @@ function a11yProps(index) {
   };
 }
 
-export default function MyTabs() {
+export default function MyTabs({ myunit, setmyunit }) {
 
   const [value, setValue] = React.useState(0);
 
@@ -59,10 +59,10 @@ export default function MyTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <ChartSeparate />
+        <ChartSeparate {...{ myunit, setmyunit }} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <ChartCrossfilter />
+        <ChartCrossfilter {...{ myunit, setmyunit }} />
       </TabPanel>
 
     </Box>

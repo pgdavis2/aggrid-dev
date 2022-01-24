@@ -5,12 +5,12 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import UnitSelectorDynamic from '../components/Selectors/UnitSelectorDynamic';
 import ReactDatePicker from '../components/Selectors/ReactDatePicker';
-import * as React from 'react';
+import React, { useState } from 'react';
 
 
 
 export default function GenSummary() {
-  const [myunit, setmyunit] = useState('');
+  const [myunit, setmyunit] = useState({ unit: '' });
   return (
     <div>
       <Typography variant="h4" color='charcoal' fontWeight='500'>
@@ -21,7 +21,7 @@ export default function GenSummary() {
         <Grid container spacing={1} style={{ paddingLeft: '15px', paddingBottom: '8px' }}>
 
           <Grid item xs={3}>
-            <UnitSelectorDynamic />
+            <UnitSelectorDynamic {...{ myunit, setmyunit }} />
           </Grid>
 
 
