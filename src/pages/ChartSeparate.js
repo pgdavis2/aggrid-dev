@@ -25,7 +25,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 //This adds integrated charts
-export default function Chart_separate() {
+export default function Chart_separate({ myunit, setmyunit }) {
 
 
   const [gridApi, setGridApi] = useState(null);
@@ -109,9 +109,7 @@ export default function Chart_separate() {
     gridApi.exportDataAsExcel();
   };
 
-  //var result = DATA.filter(obj => obj.Unit === {myunit});
-  var result = DATA;
-
+  var result = DATA.filter(obj => obj.Unit === myunit.Unit);
   //This is where the fun begins
   return (
     <Box >

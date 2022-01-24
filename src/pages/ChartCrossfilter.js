@@ -15,7 +15,7 @@ import './pageStyles.css'
 
 
 
-export default function Chart_crossfilter() {
+export default function Chart_crossfilter({ myunit, setmyunit }) {
 
 
   const [gridApi, setGridApi] = useState(null);
@@ -105,10 +105,7 @@ export default function Chart_crossfilter() {
     gridApi.exportDataAsExcel();
   };
 
-  // var result = DATA.filter(obj => obj.Unit === "Lion Wind");
-  var result = DATA;
-
-
+  var result = DATA.filter(obj => obj.Unit === myunit.Unit);
   //This is where the fun begins
   return (
     <Box >
