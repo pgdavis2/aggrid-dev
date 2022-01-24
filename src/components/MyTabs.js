@@ -42,7 +42,7 @@ function a11yProps(index) {
 }
 
 export default function MyTabs() {
- 
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -51,7 +51,7 @@ export default function MyTabs() {
 
   return (
     <Box sx={{ width: '100%' }} >
-      <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} variant="fullWidth">
           <Tab label="SeparateChart" {...a11yProps(0)} />
           <Tab label="Cross Filtered Chart" {...a11yProps(1)} />
@@ -59,7 +59,7 @@ export default function MyTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-      <ChartSeparate />
+        <ChartSeparate />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <ChartCrossfilter />
