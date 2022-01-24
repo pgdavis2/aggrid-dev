@@ -6,9 +6,8 @@ import React, { useState, useEffect, Component } from "react";
 
 
 
-export default function UnitSelectorDynamic() {
+export default function UnitSelectorDynamic({ myunit, setmyunit }) {
   const options = UNITS
-  const [myunit, setmyunit] = useState('');
   return (
     <div className="UnitSelectorDynamic">
       <Select
