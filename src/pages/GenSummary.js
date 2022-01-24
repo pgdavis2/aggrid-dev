@@ -10,6 +10,7 @@ import * as React from 'react';
 
 
 export default function GenSummary() {
+  const [myunit, setmyunit] = useState('');
   return (
     <div>
       <Typography variant="h4" color='charcoal' fontWeight='500'>
@@ -33,7 +34,7 @@ export default function GenSummary() {
 
       <Grid container spacing={1} sx={{ paddingLeft: '15px' }}>
 
-        <MyTabs />
+        <MyTabs {...{ myunit, setmyunit }} />
 
       </Grid>
 
