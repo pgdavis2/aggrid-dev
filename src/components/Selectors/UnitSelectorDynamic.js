@@ -1,15 +1,13 @@
 import Select from 'react-select';
 import { UNITS } from '../../data/names.json'
 
-import React, { useState, useEffect,Component } from "react";
+import React, { useState, useEffect, Component } from "react";
 
 
 
 
-  export default function UnitSelectorDynamic() {
-    const options = UNITS
-    const [myunit, setmyunit] = useState('');
-    //console.log(myunit)
+export default function UnitSelectorDynamic({ myunit, setmyunit }) {
+  const options = UNITS
   return (
     <div className="UnitSelectorDynamic">
       <Select
@@ -17,9 +15,9 @@ import React, { useState, useEffect,Component } from "react";
         onChange={setmyunit}
         options={options}
       />
-    <p>{myunit.Unit}</p>
+      <p>{myunit.Unit}</p>
     </div>
-    
+
   );
-  
+
 }
