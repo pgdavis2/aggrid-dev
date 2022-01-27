@@ -110,6 +110,7 @@ export default function Chart_separate({ myunit, setmyunit }) {
   };
 
   var result = DATA.filter(obj => myunit.includes(obj.Unit));
+
   //This is where the fun begins
   return (
     <Box >
@@ -120,7 +121,7 @@ export default function Chart_separate({ myunit, setmyunit }) {
 
 
         <Grid item xs="8" sx={{ height: 500 }}>
-          <Item><LineChart /></Item>
+          <Item><LineChart {...{ result }} /></Item>
         </Grid>
 
         <Grid className='ag-theme-balham' item xs={12} sx={{ height: '600px' }}>
