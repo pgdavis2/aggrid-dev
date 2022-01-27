@@ -117,7 +117,7 @@ export default function Chart_separate({ myunit, setmyunit }) {
 
       <Grid container spacing={1}>
 
-        <Grid item xs="4"><BarChart /></Grid>
+        <Grid item xs="4"><BarChart {...{ result }}/></Grid>
 
 
         <Grid item xs="8" sx={{ height: 500 }}>

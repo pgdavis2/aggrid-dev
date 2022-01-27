@@ -21,6 +21,7 @@ export default function UnitSelectorDynamic({ myunit, setmyunit }) {
         }}
         options={UNITS}
         isMulti={true}
+        closeMenuOnSelect={false}
       />
       <p>{myunit.Unit}</p>
     </div>

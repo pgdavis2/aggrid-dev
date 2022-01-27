@@ -14,7 +14,7 @@ import ReactDatePicker from '../components/Selectors/ReactDatePicker';
 //key1='U7KAS9GNTXA55U5JGNUJDKV3F' outlook
 //key2='R74KJYK6Y69HYT8NAWVPQMC7J' gmail
 
-var vc_api='R74KJYK6Y69HYT8NAWVPQMC7J_'
+var vc_api='R74KJYK6Y69HYT8NAWVPQMC7J'
 
 //const myplace=ZipSelector.myzip.zip
 const myplace=ZipSelector.myzip
