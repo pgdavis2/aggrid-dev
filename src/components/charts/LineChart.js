@@ -1,16 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { AgChartsReact } from "ag-charts-react";
-import { DATA } from '../../data/data_hr.json'
 
-var result = DATA.filter(obj => obj.Unit === "Unit1");
-//var result = result1.filter(obj =>  obj.Date >='1/1/2019' && obj.Date<= '1/31/2019');
-
-class Linechart extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      options: {
+export default function Linechart({ result }) {
+  return (
+    <div className="ag-theme-balham" style={{ height: 475 }}>
+      <AgChartsReact options={{
         autoSize: true,
         data: result,
         title: {
@@ -67,19 +61,7 @@ class Linechart extends Component {
           max: .1,
           height: 15
         },
-      },
-    };
-  }
-
-  componentDidMount() { }
-
-  render() {
-    return (
-      <div className="ag-theme-balham" style={{ height: 475 }}>
-        <AgChartsReact options={this.state.options} />
-      </div>
-    );
-  }
+      }} />
+    </div>
+  );
 }
-
-export default Linechart;
