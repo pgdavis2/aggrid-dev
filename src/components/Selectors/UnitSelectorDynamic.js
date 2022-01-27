@@ -7,13 +7,20 @@ import React, { useState, useEffect, Component } from "react";
 
 
 export default function UnitSelectorDynamic({ myunit, setmyunit }) {
-  const options = UNITS
   return (
     <div className="UnitSelectorDynamic">
       <Select
-        defaultValue={myunit}
-        onChange={setmyunit}
-        options={options}
+        name="unit"
+        defaultValue={myunit.map(unit => ({ label: unit, value: unit }))}
+        onChange={(e) => {
+          if (Array.isArray(e)) {
+            setmyunit(e.map(row => row.value))
+          } else {
+            setmyunit([])
+          }
+        }}
+        options={UNITS}
+        isMulti={true}
       />
       <p>{myunit.Unit}</p>
     </div>

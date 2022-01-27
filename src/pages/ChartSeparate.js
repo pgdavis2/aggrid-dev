@@ -109,7 +109,7 @@ export default function Chart_separate({ myunit, setmyunit }) {
     gridApi.exportDataAsExcel();
   };
 
-  var result = DATA.filter(obj => obj.Unit === myunit.Unit);
+  var result = DATA.filter(obj => myunit.includes(obj.Unit));
   //This is where the fun begins
   return (
     <Box >
