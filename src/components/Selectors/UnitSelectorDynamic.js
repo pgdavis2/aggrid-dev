@@ -11,7 +11,14 @@ export default function UnitSelectorDynamic({ myunit, setmyunit }) {
     <div className="UnitSelectorDynamic">
       <Select
         name="unit"
-        onChange={(e) => console.log(e)}
+        defaultValue={myunit.map(unit => ({ label: unit, value: unit }))}
+        onChange={(e) => {
+          if (Array.isArray(e)) {
+            setmyunit(e.map(row => row.value))
+          } else {
+            setmyunit([])
+          }
+        }}
         options={UNITS}
         isMulti={true}
       />
