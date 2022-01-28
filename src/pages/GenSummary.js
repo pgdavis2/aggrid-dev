@@ -10,7 +10,8 @@ import React, { useState } from 'react';
 
 
 export default function GenSummary() {
-  const [myunit, setmyunit] = useState(['Unit1', 'Unit2', 'Unit3']);
+  //const [myunit, setmyunit] = useState(['']);
+   const [myunit, setmyunit] = useState(['Unit1', 'Unit2', 'Unit3']);
   return (
     <div>
       <Typography variant="h4" color='charcoal' fontWeight='500'>

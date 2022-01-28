@@ -14,7 +14,7 @@ export default function DatePickerRange() {
     setEndDate(end);
   };
   // first month January is 0 not 1 !!
-const firstDate=toDate(new Date(2018, 2, 1))
+const firstDate=toDate(new Date(2019, 2, 1))
 
  return (
  
