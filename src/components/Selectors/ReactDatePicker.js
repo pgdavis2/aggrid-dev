@@ -5,9 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { toDate } from "date-fns";
 
 
-export default function DatePickerRange() {
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+export default function DatePickerRange({ startDate, setStartDate, endDate, setEndDate }) {
   const onChange = (dates) => {
     const [start, end] = dates;
     setStartDate(start);

@@ -11,6 +11,8 @@ import React, { useState } from 'react';
 
 export default function GenSummary() {
   const [myunit, setmyunit] = useState(['Unit1', 'Unit2', 'Unit3']);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
   return (
     <div>
       <Typography variant="h4" color='charcoal' fontWeight='500'>
@@ -26,7 +28,7 @@ export default function GenSummary() {
 
 
           <Grid item xs={2} style={{ paddingLeft: '8px', paddingTop: '12px' }}>
-            <ReactDatePicker />
+            <ReactDatePicker {...{ startDate, setStartDate, endDate, setEndDate }} />
           </Grid>
 
         </Grid>
