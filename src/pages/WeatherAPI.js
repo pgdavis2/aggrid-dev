@@ -21,7 +21,7 @@ const myplace = ZipSelector.myzip
 
 export default function WeatherAPI() {
 
-    const url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/27587/last2days?unitGroup=us&include=hours&key=' + vc_api + '&contentType=json'
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/27587/last2days?unitGroup=us&include=hours&key=${process.env.REACT_APP_VC_API}&contentType=json`
 
     const [rowData, setRowData] = useState([])
     const [colDefs, setColDefs] = useState([
