@@ -10,18 +10,7 @@ import Box from '@mui/material/Box';
 import ZipSelector from '../components/Selectors/ZipSelector';
 import ReactDatePicker from '../components/Selectors/ReactDatePicker';
 
-//Free VC api keys - limited to 1000 records/day each
-//key1='U7KAS9GNTXA55U5JGNUJDKV3F' outlook
-//key2='R74KJYK6Y69HYT8NAWVPQMC7J' gmail
-
-var vc_api = 'R74KJYK6Y69HYT8NAWVPQMC7J_'
-
-//const myplace=ZipSelector.myzip.zip
-const myplace = ZipSelector.myzip
-
 export default function WeatherAPI() {
-
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/27587/last2days?unitGroup=us&include=hours&key=${process.env.REACT_APP_VC_API}&contentType=json`
 
     const [rowData, setRowData] = useState([])
     const [colDefs, setColDefs] = useState([
@@ -32,18 +21,18 @@ export default function WeatherAPI() {
         { field: 'solarradiation', flex: 1 }
 
     ]);
-    useEffect(() => {
-        fetch(url)
-            .then(response => response.json())
-            .then(rowData => {
-                setRowData(rowData.days)
-            }); //rowData.(the array name return
-    }, []);
+
+    async function fetchData() {
+        const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/27587/last2days?unitGroup=us&include=hours&key=${process.env.REACT_APP_VC_API}&contentType=json`
+        const response = await fetch(url);
+        const json = await response.json();
+        setRowData(json.data);
+    }
 
     return (
         <div>
             <Typography variant="h4" color='charcoal' fontWeight='500'>
-                Weather Data for {myplace}
+                Weather Data for {ZipSelector.myzip}
             </Typography>
 
             <Box sx={{ width: '100%', backgroundColor: 'lightgray' }}>
