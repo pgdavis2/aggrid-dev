@@ -11,8 +11,8 @@ import React, { useState } from 'react';
 
 export default function GenSummary() {
   const [myunit, setmyunit] = useState(['Unit1', 'Unit2', 'Unit3']);
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [startDate, setStartDate] = useState(new Date(2018, 2, 1));
+  const [endDate, setEndDate] = useState(new Date());
   return (
     <div>
       <Typography variant="h4" color='charcoal' fontWeight='500'>
@@ -36,7 +36,7 @@ export default function GenSummary() {
 
       <Grid container spacing={1} sx={{ paddingLeft: '15px' }}>
 
-        <MyTabs {...{ myunit, setmyunit }} />
+        <MyTabs {...{ myunit, setmyunit, startDate, endDate }} />
 
       </Grid>
 

@@ -29,7 +29,7 @@ export default function DatePickerRange({ startDate, setStartDate, endDate, setE
         dropdownMode="select"
         monthsShown={2}
         fixedHeight
-        maxDate={addDays(firstDate, -1)}
+        maxDate={endDate}
         placeholderText="Select Start and End Date"
       //inline
       />
