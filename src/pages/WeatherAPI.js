@@ -7,6 +7,8 @@ import '../App.css'
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ToggleButton from '@mui/material/ToggleButton';
 import ZipSelector from '../components/Selectors/ZipSelector';
 import ReactDatePicker from '../components/Selectors/ReactDatePicker';
 
@@ -45,6 +47,13 @@ export default function WeatherAPI() {
 
                     <Grid item xs={2} style={{ paddingLeft: '8px', paddingTop: '12px' }}>
                         <ReactDatePicker />
+                    </Grid>
+
+                    <Grid item xs={1} style={{ paddingLeft: '8px', paddingTop: '12px' }}>
+                        <ToggleButtonGroup defaultValue="day">
+                            <ToggleButton value="day">Day</ToggleButton>
+                            <ToggleButton value="hour">Hour</ToggleButton>
+                        </ToggleButtonGroup>
                     </Grid>
 
                     <Grid item xs={1} style={{ paddingLeft: '8px', paddingTop: '12px' }}>
