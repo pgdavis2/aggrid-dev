@@ -26,7 +26,7 @@ export default function WeatherAPI() {
         const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/27587/last2days?unitGroup=us&include=hours&key=${process.env.REACT_APP_VC_API}&contentType=json`
         const response = await fetch(url);
         const json = await response.json();
-        setRowData(json.data);
+        setRowData(json.days);
     }
 
     return (
@@ -45,6 +45,10 @@ export default function WeatherAPI() {
 
                     <Grid item xs={2} style={{ paddingLeft: '8px', paddingTop: '12px' }}>
                         <ReactDatePicker />
+                    </Grid>
+
+                    <Grid item xs={1} style={{ paddingLeft: '8px', paddingTop: '12px' }}>
+                        <button onClick={fetchData}>Refresh</button>
                     </Grid>
 
                 </Grid>
