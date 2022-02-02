@@ -1,7 +1,8 @@
 {"menuData": [
   {"name": "Home","url": "/"},
   {"name": "Generators","url": "/page/GenSummary"},
-  {"name": "WeatherAPI","url": "/page/WeatherAPI"}
+  {"name": "WeatherAPI","url": "/page/WeatherAPI"},
+  {"name": "MisoAsAPI","url": "/page/MisoAsAPI"}
     
   ]
 }

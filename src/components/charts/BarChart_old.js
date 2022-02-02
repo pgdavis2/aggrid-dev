@@ -1,12 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 import { AgChartsReact } from "ag-charts-react";
+import { DATA } from '../../data/data_dy.json'
 
-export default function Barchart({ result }) {
-  return (
-    <div className="ag-theme-balham" style={{ height: 475 }}>
-    <AgChartsReact options={{
+class AggridChart3 extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        options: {
           autoSize: true,
-          data: result,
+          data: DATA,
           title: {
             text: 'Energy (MWh)',
             fontSize: 18,
@@ -49,9 +52,19 @@ export default function Barchart({ result }) {
             markerShape: 'square',
             strokeWidth: 0,
           },
-    }}
+        },
+      };
+    }
 
-      />
-      </div>
+  componentDidMount() {}
+
+  render() {
+    return (
+      <div className="ag-theme-balham">
+          <AgChartsReact options={this.state.options} />
+          </div>
     );
   }
+}
+
+export default AggridChart3;
