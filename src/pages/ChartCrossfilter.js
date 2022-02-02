@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -15,7 +15,7 @@ import './pageStyles.css'
 
 
 
-export default function Chart_crossfilter({ myunit, setmyunit }) {
+export default function Chart_crossfilter({ myunit, setmyunit, startDate, endDate }) {
 
 
   const [gridApi, setGridApi] = useState(null);
@@ -105,7 +105,7 @@ export default function Chart_crossfilter({ myunit, setmyunit }) {
     gridApi.exportDataAsExcel();
   };
 
-  var result = DATA.filter(obj => myunit.includes(obj.Unit));
+  var result = DATA.filter(obj => myunit.includes(obj.Unit))
   //This is where the fun begins
   return (
     <Box >
