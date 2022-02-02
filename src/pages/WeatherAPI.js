@@ -13,7 +13,8 @@ import ZipSelector from '../components/Selectors/ZipSelector';
 import ReactDatePicker from '../components/Selectors/ReactDatePicker';
 
 export default function WeatherAPI() {
-
+    const [payload, setPayload] = useState([]);
+    const [resolution, setResolution] = useState('hour');
     const [rowData, setRowData] = useState([])
     const [colDefs, setColDefs] = useState([
 
@@ -28,7 +29,21 @@ export default function WeatherAPI() {
         const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/27587/last2days?unitGroup=us&include=hours&key=${process.env.REACT_APP_VC_API}&contentType=json`
         const response = await fetch(url);
         const json = await response.json();
-        setRowData(json.days);
+        setPayload(json);
+        if (resolution === 'hour') {
+            setRowData(json.days.map(day => day.hours).flat());
+        } else {
+            setRowData(json.days);
+        }
+    }
+
+    function toggleResolution(event, value) {
+        setResolution(value);
+        if (value === 'hour') {
+            setRowData(payload.days.map(day => day.hours).flat());
+        } else {
+            setRowData(payload.days);
+        }
     }
 
     return (
@@ -50,7 +65,7 @@ export default function WeatherAPI() {
                     </Grid>
 
                     <Grid item xs={1} style={{ paddingLeft: '8px', paddingTop: '12px' }}>
-                        <ToggleButtonGroup defaultValue="day">
+                        <ToggleButtonGroup exclusive defaultValue="hour" value={resolution} onChange={toggleResolution}>
                             <ToggleButton value="day">Day</ToggleButton>
                             <ToggleButton value="hour">Hour</ToggleButton>
                         </ToggleButtonGroup>
