@@ -31,7 +31,13 @@ export default function WeatherAPI() {
         const json = await response.json();
         setPayload(json);
         if (resolution === 'hour') {
-            setRowData(json.days.map(day => day.hours).flat());
+            setRowData(
+                json.days.map(day => {
+                    return day.hours.map(hour => {
+                        return { ...hour, datetime: `${day.datetime} ${hour.datetime}` }
+                    })
+                }).flat()
+            );
         } else {
             setRowData(json.days);
         }
@@ -40,7 +46,13 @@ export default function WeatherAPI() {
     function toggleResolution(event, value) {
         setResolution(value);
         if (value === 'hour') {
-            setRowData(payload.days.map(day => day.hours).flat());
+            setRowData(
+                payload.days.map(day => {
+                    return day.hours.map(hour => {
+                        return { ...hour, datetime: `${day.datetime} ${hour.datetime}` }
+                    })
+                }).flat()
+            );
         } else {
             setRowData(payload.days);
         }
