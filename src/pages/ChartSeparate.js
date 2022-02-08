@@ -25,7 +25,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 //This adds integrated charts
-export default function Chart_separate({ myunit, setmyunit }) {
+export default function Chart_separate({ myunit, setmyunit, startDate, endDate }) {
 
 
   const [gridApi, setGridApi] = useState(null);
@@ -109,7 +109,9 @@ export default function Chart_separate({ myunit, setmyunit }) {
     gridApi.exportDataAsExcel();
   };
 
-  var result = DATA.filter(obj => myunit.includes(obj.Unit));
+  var result = DATA.filter(obj => {
+    return myunit.includes(obj.Unit) && new Date(obj.DateTime) >= startDate && new Date(obj.DateTime) <= endDate
+  });
 
   //This is where the fun begins
   return (
@@ -117,7 +119,7 @@ export default function Chart_separate({ myunit, setmyunit }) {
 
       <Grid container spacing={1}>
 
-        <Grid item xs="4"><BarChart {...{ result }}/></Grid>
+        <Grid item xs="4"><BarChart {...{ result }} /></Grid>
 
 
         <Grid item xs="8" sx={{ height: 500 }}>

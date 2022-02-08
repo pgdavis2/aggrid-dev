@@ -105,7 +105,7 @@ export default function Chart_crossfilter({ myunit, setmyunit, startDate, endDat
     gridApi.exportDataAsExcel();
   };
 
-  var result = DATA.filter(obj => myunit.includes(obj.Unit))
+  var result = DATA.filter(obj => myunit.includes(obj.Unit) && new Date(obj.DateTime) >= startDate && new Date(obj.DateTime) <= endDate);
   //This is where the fun begins
   return (
     <Box >
